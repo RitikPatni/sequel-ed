@@ -5,7 +5,7 @@
       id="query"
       cols="40"
       rows="10"
-      v-model="query"
+      v-model.trim="query"
       class="sql-input__area"
       placeholder="SELECT * from table"
     ></textarea>
@@ -26,9 +26,10 @@ export default {
 
   methods: {
     executeQuery() {
-      if (this.query === 'SELECT * from table') {
+      const trimmedQuery = this.query.trim();
+      if (trimmedQuery === 'SELECT * from table') {
         this.$store.commit('SELECT_ALL_DATA');
-      } else if (this.query === 'SELECT * from table LIMIT 100') {
+      } else if (trimmedQuery === 'SELECT * from table LIMIT 100') {
         this.$store.commit('SELECT_FIRST_100_RECORDS');
       }
     },
