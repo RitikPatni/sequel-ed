@@ -45,9 +45,6 @@ export default {
           type: 'error',
           message: 'URL is malformed',
         });
-        setTimeout(() => {
-          this.$store.commit('HIDE_TOAST');
-        }, 3000);
       }
     },
     isValidHttpUrl(string) {

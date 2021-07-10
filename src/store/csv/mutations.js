@@ -6,11 +6,17 @@ const mutations = {
     state.dataHeaders = getKeys(data);
   },
   SELECT_ALL_DATA(state) {
+    state.filteredData = undefined
+    state.filteredHeaders = undefined
     state.filteredData = state.data
     state.filteredHeaders = getKeys(state.filteredData)
   },
   SELECT_FIRST_100_RECORDS(state) {
-    state.filteredData = state.data.splice(0, state.data.length > 100 ? 100 : state.data.length)
+    state.filteredData = undefined
+    state.filteredHeaders = undefined
+    // Making a clone of data as otherwise splice would alter the original array
+    const clonedData = JSON.parse(JSON.stringify(state.data))
+    state.filteredData = clonedData.splice(0, state.data.length > 100 ? 100 : state.data.length)
     state.filteredHeaders = getKeys(state.filteredData)
   },
   RESET_FILTERED_DATA(state) {

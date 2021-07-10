@@ -11,13 +11,15 @@ const actions = {
           header: true,
           skipEmptyLines: true,
           complete: function (results) {
-            context.commit('SHOW_TOAST', { type: 'success', message: 'CSV Loaded Successfully' })
-            context.commit('SAVE_CSV', results.data);
-            setTimeout(() => {
-              context.commit('HIDE_TOAST')
-            }, 3000);
-            context.commit('SAVE_CSV_HEADERS', results.data);
-            resolve(results)
+            if (results?.data) {
+              context.commit('SHOW_TOAST', { type: 'success', message: 'CSV Loaded Successfully' })
+              context.commit('SAVE_CSV', results.data);
+              context.commit('SAVE_CSV_HEADERS', results.data);
+              resolve(results)
+            }
+            else {
+              context.commit('SHOW_TOAST', { type: 'error', message: 'No Data found on the provided URL' })
+            }
           },
           error: function (err, file, inputElem, reason) {
             reject(err)
