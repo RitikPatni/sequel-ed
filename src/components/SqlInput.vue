@@ -26,10 +26,10 @@ export default {
 
   methods: {
     executeQuery() {
-      const trimmedQuery = this.query.trim();
-      if (trimmedQuery === 'SELECT * from table') {
+      const cleanedQuery = this.query.trim().toLowerCase();
+      if (cleanedQuery === 'select * from table') {
         this.$store.commit('SELECT_ALL_DATA');
-      } else if (trimmedQuery === 'SELECT * from table LIMIT 100') {
+      } else if (cleanedQuery === 'select * from table limit 100') {
         this.$store.commit('SELECT_FIRST_100_RECORDS');
       }
     },
