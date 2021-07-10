@@ -7,6 +7,9 @@ const getters = {
   },
   filteredData(state) {
     return state.filteredData
+  },
+  filteredHeaders(state) {
+    return state.filteredHeaders
   }
 };
 export default getters;

@@ -3,16 +3,31 @@ const mutations = {
     state.data = data;
   },
   SAVE_CSV_HEADERS(state, data) {
-    let key = [];
-    state.dataHeaders = []
-    for (key in data[0]) {
-      if (data[0].hasOwnProperty(key)) {
-        state.dataHeaders.push(key);
-      }
-    }
+    state.dataHeaders = getKeys(data);
   },
   SELECT_ALL_DATA(state) {
     state.filteredData = state.data
+    state.filteredHeaders = getKeys(state.filteredData)
+  },
+  SELECT_FIRST_100_RECORDS(state) {
+    state.filteredData = state.data.splice(0, state.data.length > 100 ? 100 : state.data.length)
+    state.filteredHeaders = getKeys(state.filteredData)
+  },
+  RESET_FILTERED_DATA(state) {
+    state.filteredData = undefined
+    state.filteredHeaders = undefined
   }
+
 };
 export default mutations;
+function getKeys(data) {
+  let key = [];
+  const keysArray = [];
+  for (key in data[0]) {
+    if (data[0].hasOwnProperty(key)) {
+      keysArray.push(key);
+    }
+  }
+  return keysArray
+}
+

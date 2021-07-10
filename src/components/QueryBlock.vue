@@ -1,6 +1,6 @@
 <template>
-  <fieldset>
-    <legend align="center">{{ title }}</legend>
+  <fieldset class="query-block">
+    <legend align="center" class="query-block__title">{{ title }}</legend>
     <slot></slot>
   </fieldset>
 </template>
@@ -15,3 +15,14 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.query-block {
+  border: 1px solid var(--text-light);
+  display: grid;
+  padding: 1rem;
+  &__title {
+    font-weight: 600;
+    font-size: var(--xs);
+  }
+}
+</style>

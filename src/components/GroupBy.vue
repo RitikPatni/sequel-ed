@@ -1,26 +1,30 @@
 <template>
-  <query-block title="Group By">
-    <select name="filter" id="filter">
-      <option value="" disabled selected>Select Header</option>
-      <option
-        :value="header"
-        v-for="(header, index) in dataHeaders"
-        :key="index"
-      >
-        {{ header }}
-      </option>
-    </select>
+  <query-block title="Group by">
+    <VueMultiselect
+      v-model="value"
+      :options="dataHeaders"
+      :searchable="false"
+      :close-on-select="false"
+      :show-labels="false"
+      placeholder="Pick a value"
+    ></VueMultiselect>
   </query-block>
 </template>
 <script>
 import { mapGetters } from 'vuex';
+import VueMultiselect from 'vue-multiselect';
 import QueryBlock from './QueryBlock.vue';
-
 export default {
+  components: { QueryBlock, VueMultiselect },
   name: 'GroupBy',
-  components: { QueryBlock },
   computed: {
     ...mapGetters(['dataHeaders']),
   },
+  data() {
+    return {
+      value: '',
+    };
+  },
 };
 </script>
+<style src="vue-multiselect/dist/vue-multiselect.css"></style>

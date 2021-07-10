@@ -1,5 +1,6 @@
 import { createStore } from 'vuex';
 import csv from './csv/index';
+import toast from './toast/index';
 
 
 export default createStore({
@@ -10,6 +11,7 @@ export default createStore({
   actions: {
   },
   modules: {
-    csv
+    csv,
+    toast
   },
 });
