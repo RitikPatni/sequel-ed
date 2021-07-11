@@ -7,7 +7,11 @@
       theme="chrome"
       class="sql-input__editor"
     />
-    <custom-button variant="primary" class="sql-input__button"
+    <custom-button
+      variant="primary"
+      class="sql-input__button"
+      :isDisabled="!query"
+      :title="{ 'Please enter a query first': !query }"
       >Execute Query</custom-button
     >
   </form>
@@ -34,6 +38,12 @@ export default {
         this.$store.commit('SELECT_ALL_DATA');
       } else if (cleanedQuery === 'select * from table limit 100') {
         this.$store.commit('SELECT_FIRST_100_RECORDS');
+      } else {
+        this.$store.commit('SHOW_TOAST', {
+          type: 'error',
+          message:
+            "This query isn't available in our database yet please try something else",
+        });
       }
     },
   },

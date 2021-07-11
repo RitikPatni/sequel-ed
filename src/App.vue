@@ -95,10 +95,13 @@ export default {
   }
   &__body {
     display: grid;
-    padding: 1rem 2rem;
     justify-content: center;
     background: var(--gray-200);
     min-height: 20rem;
+    padding: 2rem 0rem;
+    @media only screen and (min-width: 640px) {
+      padding: 2rem;
+    }
     &__container {
       &__body {
         max-width: 960px;
@@ -108,7 +111,10 @@ export default {
           width: 960px;
         }
         display: grid;
-        padding: 2rem;
+        padding: 2rem 1rem;
+        @media only screen and (min-width: 640px) {
+          padding: 2rem;
+        }
         background: var(--gray-100);
         &__heading {
           font-weight: var(--semibold);
