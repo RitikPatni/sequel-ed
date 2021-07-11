@@ -1,5 +1,12 @@
 <template>
-  <div class="toast" :class="{ toast__success: toastData?.type === 'success' }">
+  <div
+    class="toast"
+    :class="{
+      toast__success: toastData?.type === 'success',
+      toast__warning: toastData?.type === 'warning',
+      toast__error: toastData?.type === 'error',
+    }"
+  >
     {{ toastData?.message }}
     <button
       title="Dismiss Toast"

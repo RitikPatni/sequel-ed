@@ -38,13 +38,21 @@ export default {
         this.$store.commit('SELECT_ALL_DATA');
       } else if (cleanedQuery === 'select * from table limit 100') {
         this.$store.commit('SELECT_FIRST_100_RECORDS');
+        this.showSuccessToast();
       } else {
+        this.$store.commit('RESET_FILTERED_DATA');
         this.$store.commit('SHOW_TOAST', {
-          type: 'error',
+          type: 'warning',
           message:
             "This query isn't available in our database yet please try something else",
         });
       }
+    },
+    showSuccessToast() {
+      this.$store.commit('SHOW_TOAST', {
+        type: 'success',
+        message: 'Query successful see results',
+      });
     },
   },
 };
@@ -60,7 +68,7 @@ export default {
     height: 15rem;
   }
   &__button {
-    justify-self: center;
+    justify-self: start;
   }
 }
 </style>

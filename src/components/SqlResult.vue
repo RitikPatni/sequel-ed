@@ -1,5 +1,5 @@
 <template>
-  <div class="sql-result">
+  <div class="sql-result" ref="table">
     <table v-if="filteredData" class="sql-result__table">
       <thead class="sql-result__table__header">
         <tr>
@@ -26,17 +26,40 @@
       </tbody>
     </table>
   </div>
+  <custom-button variant="primary" class="button" @click="downloadCSV">
+    Download results as CSV
+  </custom-button>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-
+import CustomButton from './CustomButton.vue';
 export default {
   name: 'SqlResult',
   computed: {
     ...mapGetters(['filteredData', 'filteredHeaders']),
   },
-  mounted() {},
+  components: {
+    CustomButton,
+  },
+  mounted() {
+    this.$refs.table.scrollIntoView({ behavior: 'smooth' });
+  },
+  methods: {
+    downloadCSV() {
+      this.$store
+        .dispatch('jsonToCSV', this.filteredData)
+        .then((result) => {
+          let a = document.createElement('a');
+          a.href = 'data:attachment/csv,' + encodeURIComponent(result);
+          a.target = '_blank';
+          a.download = `FilteredData.csv`;
+          document.body.appendChild(a);
+          a.click();
+        })
+        .catch((err) => {});
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -70,5 +93,9 @@ export default {
       }
     }
   }
+}
+.button {
+  justify-self: start;
+  margin-top: 0.5rem;
 }
 </style>

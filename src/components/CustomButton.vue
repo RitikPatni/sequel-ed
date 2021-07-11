@@ -40,7 +40,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .btn {
-  padding: 0.8rem 1rem 0.7rem;
+  padding: 0.8rem 3rem 0.7rem;
   border: 0.2rem solid var(--primary);
   text-transform: capitalize;
   position: relative;
@@ -51,10 +51,40 @@ export default {
     background-color: var(--primary);
     color: var(--white);
   }
+  &__loader {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    box-sizing: border-box;
+    opacity: 0;
+    border-radius: 50%;
+    border-top: 2px solid var(--white);
+    border-left: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+    border-right: 2px solid rgba(var(--white), 0.35);
+    transition: all 0.5s ease;
+    animation: spin 0.75s infinite linear;
+    transform: translateY(-50%);
+  }
   &--loader,
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    .btn__loader {
+      opacity: 1;
+    }
+  }
+}
+@keyframes spin {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
   }
 }
 </style>
