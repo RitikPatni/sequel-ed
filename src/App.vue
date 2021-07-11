@@ -67,10 +67,7 @@ export default {
 </script>
 
 <style lang="scss" >
-@import url(./assets/styles/reset.css);
-@import url(./assets/styles/fonts.css);
-@import url(./assets/styles/base.css);
-@import url(./assets/styles/transition.css);
+@import url(./assets/styles/styles.scss);
 .app {
   display: grid;
   &__title {
@@ -87,11 +84,11 @@ export default {
       }
       &__title-block {
         display: grid;
-        gap: 0.25rem;
-        padding: 0 4rem;
+        gap: 1rem;
+        padding: 2rem 0;
         &__title {
-          font-size: var(--2xl);
-          font-weight: 800;
+          font-size: var(--3xl);
+          font-weight: var(--bold);
         }
       }
     }
@@ -114,7 +111,7 @@ export default {
         padding: 2rem;
         background: var(--gray-100);
         &__heading {
-          font-weight: 600;
+          font-weight: var(--semibold);
           text-align: left;
           margin: 2rem 0 1rem;
         }

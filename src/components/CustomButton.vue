@@ -46,7 +46,7 @@ export default {
   position: relative;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 0.25rem;
+  border-radius: var(--rounded);
   &__primary {
     background-color: var(--primary);
     color: var(--white);

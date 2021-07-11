@@ -21,7 +21,7 @@ export default {
   display: grid;
   padding: 1rem;
   &__title {
-    font-weight: 600;
+    font-weight: var(--semibold);
     font-size: var(--xs);
   }
 }

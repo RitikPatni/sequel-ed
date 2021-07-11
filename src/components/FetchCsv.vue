@@ -80,9 +80,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 .fetch-csv {
-  display: grid;
+  display: flex;
   gap: 1rem;
-  grid-template-columns: 1fr auto auto;
+  justify-content: space-between;
+  @media only screen and(max-width:640px) {
+    flex-wrap: wrap;
+  }
   &__input {
     padding: 0.5rem 0.75rem;
     width: 100%;
@@ -94,9 +97,11 @@ export default {
   &__secondary-button {
     background: white;
     border: 1px solid var(--gray-300);
-    font-weight: 600;
+    font-weight: var(--semibold);
     border-radius: 0.25rem;
+    border-radius: var(--rounded);
     padding: 0.8rem 1rem 0.7rem;
+    white-space: nowrap;
   }
 }
 </style>

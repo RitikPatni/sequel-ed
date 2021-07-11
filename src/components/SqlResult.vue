@@ -47,7 +47,7 @@ export default {
   &__table {
     width: 100%;
     &__header {
-      background: var(--gray-100);
+      background: var(--primary-light);
       position: sticky;
       top: 0;
       border-top: 0;
@@ -57,8 +57,7 @@ export default {
           padding: 0.75rem 1.5rem;
           text-align: left;
           font-size: var(--xs);
-          font-weight: 600;
-          color: var(--text);
+          font-weight: var(--semibold);
           text-transform: uppercase;
         }
       }

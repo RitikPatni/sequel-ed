@@ -1,5 +1,6 @@
 :root {
   --primary: hsl(238, 74%, 47%);
+  --primary-light: hsl(238, 74%, 98%);
   --white: hsl(0, 0%, 100%);
   --text: hsl(0, 0%, 9%);
   --text-light: hsl(209, 18%, 30%);
@@ -16,19 +17,13 @@
   --xl: 1.5rem;
   --2xl: 2.25rem;
   --3xl: 3rem;
+  --4xl: 3.75rem;
+  --5xl: 4.5rem;
   --rounded-sm: 0.125rem;
   --rounded: 0.25rem;
-}
-button,
-a {
-  cursor: pointer;
-}
-* {
-  box-sizing: border-box;
-}
-body {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: var(--text);
+  --semibold: 600;
+  --bold: 700;
+  --extra-bold: 800;
+  --normal: 400;
+  --light: 300;
 }
