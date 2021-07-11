@@ -6,7 +6,10 @@
           <h1 class="app__title__container__title-block__title">Sequel-ed</h1>
           <p>
             Load CSV and try out SQL queries on that. Please go through
-            <a href="https://github.com/RitikPatni/sequel-ed" target="_blank"
+            <a
+              href="https://github.com/RitikPatni/sequel-ed"
+              target="_blank"
+              rel="noreferrer"
               >readme</a
             >
             before moving forward

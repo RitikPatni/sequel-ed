@@ -71,7 +71,7 @@ Added only 2 SQL queries, and those are pretty barebone, and I implemented no SQ
 Sample File: Use any link from below or use a CSV file of your choice
 
 - [orders.csv](https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/csv/orders.csv)
-- [employee_territories.csv](https://github.com/graphql-compose/graphql-compose-examples/blob/master/examples/northwind/data/csv/employee_territories.csv)
+- [employee_territories.csv](https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/csv/employee_territories.csv)
 
 ### First Query
 
