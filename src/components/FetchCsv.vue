@@ -8,7 +8,16 @@
       v-model="url"
       class="fetch-csv__input"
       required
+      :disabled="isCSVLoaded"
+      ref="urlInput"
     />
+    <button
+      type="button"
+      class="fetch-csv__secondary-button"
+      @click="switchUrl"
+    >
+      Switch URL
+    </button>
     <custom-button variant="primary" :isLoading="isLoading" type="submit"
       >Submit</custom-button
     >
@@ -22,6 +31,7 @@ export default {
     return {
       url: undefined,
       isLoading: undefined,
+      isCSVLoaded: false,
     };
   },
   components: {
@@ -35,6 +45,7 @@ export default {
           .dispatch('fetchCSV', { url: this.url })
           .then((result) => {
             this.isLoading = false;
+            this.isCSVLoaded = true;
           })
           .catch((err) => {
             this.isLoading = false;
@@ -56,6 +67,14 @@ export default {
       }
       return url.protocol === 'http:' || url.protocol === 'https:';
     },
+    switchUrl() {
+      this.isCSVLoaded = false;
+      // * Adding timer with 0ms so that this methods executes at the end of this function
+      setTimeout(() => {
+        this.$refs.urlInput.focus();
+        this.$refs.urlInput.select();
+      }, 0);
+    },
   },
 };
 </script>
@@ -63,10 +82,21 @@ export default {
 .fetch-csv {
   display: grid;
   gap: 1rem;
-  justify-content: center;
+  grid-template-columns: 1fr auto auto;
   &__input {
     padding: 0.5rem 0.75rem;
-    color: var(--text);
+    width: 100%;
+    font-size: var(--base);
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+  &__secondary-button {
+    background: white;
+    border: 1px solid var(--gray-300);
+    font-weight: 600;
+    border-radius: 0.25rem;
+    padding: 0.8rem 1rem 0.7rem;
   }
 }
 </style>

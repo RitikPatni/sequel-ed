@@ -51,42 +51,10 @@ export default {
     background-color: var(--primary);
     color: var(--white);
   }
-  &__loader {
-    display: block;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    height: 15px;
-    width: 15px;
-    background-color: transparent;
-    box-sizing: border-box;
-    opacity: 0;
-    border-radius: 50%;
-    border-top: 2px solid #fff;
-    border-left: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-    border-right: 2px solid rgba(#fff, 0.35);
-    transition: all 0.5s ease;
-    animation-name: spin;
-    animation-duration: 0.75s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
   &--loader,
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    .btn__loader {
-      opacity: 1;
-    }
-  }
-}
-@keyframes spin {
-  from {
-    transform: translateY(-50%) rotate(0deg);
-  }
-  to {
-    transform: translateY(-50%) rotate(360deg);
   }
 }
 </style>

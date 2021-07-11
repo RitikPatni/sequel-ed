@@ -1,0 +1,20 @@
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.2s ease;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(-100%);
+  transition: all 150ms ease-in 0s;
+}
+.slide-reverse-enter-active,
+.slide-reverse-leave-active {
+  transition: transform 0.2s ease;
+}
+
+.slide-reverse-enter-from,
+.slide-reverse-leave-to {
+  transform: translateX(100%);
+  transition: all 150ms ease-in 0s;
+}

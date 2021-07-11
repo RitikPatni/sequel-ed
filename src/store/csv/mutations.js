@@ -14,7 +14,7 @@ const mutations = {
   SELECT_FIRST_100_RECORDS(state) {
     state.filteredData = undefined
     state.filteredHeaders = undefined
-    // Making a clone of data as otherwise splice would alter the original array
+    // * Making a clone of data as otherwise splice would alter the original array
     const clonedData = JSON.parse(JSON.stringify(state.data))
     state.filteredData = clonedData.splice(0, state.data.length > 100 ? 100 : state.data.length)
     state.filteredHeaders = getKeys(state.filteredData)
