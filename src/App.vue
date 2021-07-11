@@ -4,7 +4,13 @@
       <div class="app__title__container">
         <div class="app__title__container__title-block">
           <h1 class="app__title__container__title-block__title">Sequel-ed</h1>
-          <p>Load CSV and try out SQL queries on that</p>
+          <p>
+            Load CSV and try out SQL queries on that. Please go through
+            <a href="https://github.com/RitikPatni/sequel-ed" target="_blank"
+              >readme</a
+            >
+            before moving forward
+          </p>
         </div>
       </div>
     </section>
@@ -82,10 +88,13 @@ export default {
       @media only screen and (min-width: 1200px) {
         width: 960px;
       }
+      justify-content: center;
       &__title-block {
         display: grid;
         gap: 1rem;
         padding: 2rem 0;
+        max-width: 30rem;
+        justify-content: center;
         &__title {
           font-size: var(--3xl);
           font-weight: var(--bold);

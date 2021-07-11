@@ -59,7 +59,7 @@ Visit the [results page](https://lighthouse-dot-webdotdevsite.appspot.com//lh/ht
 #### Performance considerations
 
 - Loaded font files from local, so I reduced a request/connection to a third-party server
-- Lazy loaded the SQL syntax highlighting library so that it doesn't block the initial render and will get called only when needed.
+- Lazy loaded the SQL syntax highlighting library so that it doesn't block the initial render and get called only when needed.
   - I also used Suspense API to show a loader when the component is loading.
 - Wrote all the CSS without the help of any third-party library
   - Wrapped the whole project in just under 4KB of CSS
@@ -68,23 +68,28 @@ Visit the [results page](https://lighthouse-dot-webdotdevsite.appspot.com//lh/ht
 
 Added only 2 SQL queries, and those are pretty barebone, and I implemented no SQL logic. It's just javascript functions running if it gets a specific query.
 
+Sample File: Use any link from below or use a CSV file of your choice
+
+- [orders.csv](https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/csv/orders.csv)
+- [employee_territories.csv](https://github.com/graphql-compose/graphql-compose-examples/blob/master/examples/northwind/data/csv/employee_territories.csv)
+
 ### First Query
 
-```sql
+```SQL
 SELECT * from table 
 ```
 
-The query will return all the records in the CSV and show them in a table
+The query returns all the records in the CSV and show them in a table
 
 ### Second Query
 
-```sql
+```SQL
 SELECT * from table LIMIT 100
 ```
 
-The query will return the first 100 records from the table.
+The query returns the first 100 records from the table.
 
-***Both the queries are non-case-sensitive and have predefined functions. They will show an error toast if it doesn't match the above queries.***
+***Both the queries are non-case-sensitive and have predefined functions. They show an error toast if it doesn't match the above queries.***
 
 ## Accessibility
 
