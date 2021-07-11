@@ -68,7 +68,7 @@ Visit the [results page](https://lighthouse-dot-webdotdevsite.appspot.com//lh/ht
 
 Added only 2 SQL queries, and those are pretty barebone, and I implemented no SQL logic. It's just javascript functions running if it gets a specific query.
 
-**First Query**
+### First Query
 
 ```sql
 SELECT * from table 
@@ -76,10 +76,10 @@ SELECT * from table
 
 The query will return all the records in the CSV and show them in a table
 
-**Second Query**
+### Second Query
 
 ```sql
-SELECT * from table LIMIT 100*
+SELECT * from table LIMIT 100
 ```
 
 The query will return the first 100 records from the table.
