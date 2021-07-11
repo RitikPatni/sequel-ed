@@ -81,7 +81,6 @@ export default {
       &__row {
         &__column {
           padding: 0.75rem 1.5rem;
-          text-align: left;
           font-size: var(--xs);
           font-weight: var(--semibold);
           text-transform: uppercase;
