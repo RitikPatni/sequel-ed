@@ -79,7 +79,7 @@ Sample File: Use any link from below or use a CSV file of your choice
 SELECT * from table 
 ```
 
-The query returns all the records in the CSV and show them in a table
+The query returns all the records in the CSV and shows them in a table
 
 ### Second Query
 
