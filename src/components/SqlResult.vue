@@ -42,6 +42,9 @@ export default {
   components: {
     CustomButton,
   },
+  mounted() {
+    this.$refs.table.scrollIntoView({ behavior: 'smooth' });
+  },
   updated() {
     this.$refs.table.scrollIntoView({ behavior: 'smooth' });
   },
