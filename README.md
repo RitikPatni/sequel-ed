@@ -107,5 +107,5 @@ Things that I wanted to do but couldn't manage to fit in the provided time
   - It performs on the main thread right now, but this can be moved to workers so that our website doesn't drop frame rates even when a large CSV file is loaded.
 - Improve design
 - Add a GUI SQL query generator, but the functionality to generate the actual query needed more time, so I had to drop it.
-  - The initial idea was to provide a GUI interface that users could then use to generate the SQL query or apply the filters as is, but the desired query logic was growing too complex and wasn't possible in the time frame.
+  - The initial idea was to provide a GUI interface that users could then use to generate the SQL query or apply the filters. Still, the desired query logic was growing too complex and wasn't possible in the time frame.
 - Allow users to upload or enter CSV data manually and process that as well.
