@@ -23,8 +23,8 @@ import { VAceEditor } from 'vue3-ace-editor';
 import 'ace-builds/src-noconflict/mode-sql';
 import 'ace-builds/src-noconflict/theme-chrome';
 export default {
-  components: { CustomButton, VAceEditor },
   name: 'SqlInput',
+  components: { CustomButton, VAceEditor },
   data() {
     return {
       query: '',
