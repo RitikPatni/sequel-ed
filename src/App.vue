@@ -99,7 +99,7 @@ export default {
         max-width: 30rem;
         justify-content: center;
         &__title {
-          font-size: var(--3xl);
+          font-size: var(--xxxl);
           font-weight: var(--bold);
         }
       }
