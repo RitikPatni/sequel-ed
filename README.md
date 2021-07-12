@@ -108,3 +108,4 @@ Things that I wanted to do but couldn't manage to fit in the provided time
 - Improve design
 - Add a GUI SQL query generator, but the functionality to generate the actual query needed more time, so I had to drop it.
   - The initial idea was to provide a GUI interface that users could then use to generate the SQL query or apply the filters as is, but the desired query logic was growing too complex and wasn't possible in the time frame.
+- Allow users to upload or enter CSV data manually and process that as well.
