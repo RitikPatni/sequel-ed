@@ -31,7 +31,7 @@ const actions = {
   },
   jsonToCSV(context, params) {
     return new Promise((resolve, reject) => {
-      var csv = Papa.unparse([
+      const csv = Papa.unparse([
         ...params
       ]);
       resolve(csv)
